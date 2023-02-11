@@ -31,6 +31,9 @@ layout = [
     [sg.Text("Location"), sg.InputText()],
     [sg.Text("Subject"), sg.InputText()],
     [sg.Text("Date letter was received"), sg.InputText()],
+    [sg.Text("Digital Signature"), sg.InputText()],
+    [sg.Text("Name of officer"), sg.InputText()],
+    [sg.Text("Portfolio"), sg.InputText()],
     [sg.Submit(), sg.Cancel()]
 ]
 
@@ -48,6 +51,9 @@ while True:
         filled_template = filled_template.replace("[Location]", values[3])
         filled_template = filled_template.replace("[SUBJECT]", values[4])
         filled_template = filled_template.replace("[date letter was received]", values[5])
+        filled_template = filled_template.replace("[DIGITAL SIGNATURE]", values[6])
+        filled_template = filled_template.replace("[NAME OF OFFICER]", values[7])
+        filled_template = filled_template.replace("[PORTFOLIO]", values[8])
         # Create the PDF object
         pdf = FPDF()
         pdf.add_page()
